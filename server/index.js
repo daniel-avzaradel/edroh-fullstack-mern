@@ -9,6 +9,7 @@ import morgan from 'morgan';
 import path from 'path';
 import colors from 'colors';
 import { fileURLToPath } from 'url';
+import { register } from './controllers/auth.js'
 
 /* CONFIGURATION */
 
@@ -37,6 +38,9 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage});
+
+/* ROUTES WITH FILES */
+app.post('/auth/register', upload.single("picture"), register)
 
 
 /* MONGOOSE SETUP */
