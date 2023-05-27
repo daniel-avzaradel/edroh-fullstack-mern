@@ -1,0 +1,1 @@
+import Post from '../model/Post.js'
