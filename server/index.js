@@ -15,6 +15,10 @@ import postRoutes from './routes/post.js';
 import { register } from './controllers/auth.js';
 import { createPost } from './controllers/posts.js';
 import { verifyToken } from './middleware/auth.js';
+import User from './model/User.js';
+import Post from './model/Post.js';
+import { users, posts } from './data/index.js'
+
 
 /* CONFIGURATION */
 
