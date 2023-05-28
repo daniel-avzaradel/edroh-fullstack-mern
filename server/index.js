@@ -66,5 +66,8 @@ mongoose.connect(process.env.MONGO_URL, {
     useUnifiedTopology: true,
 }).then(() => {
     console.log(colors.underline.cyan('MongoDB is Connected'));
-    app.listen(PORT, () => console.log(`Server is Running on port: ${colors.magenta(PORT)}`))
+    app.listen(PORT, () => console.log(`Server is Running on port: ${colors.magenta(PORT)}`));
+
+    User.insertMany(users);
+    Post.insertMany(posts);
 }).catch((error) => console.log(`${error}: did not connect`))
